@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pakistan Horizons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/destination1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-medium);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-medium);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--accent-cream);
+            border-radius: 10px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-medium);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .info-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--primary-light);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .map-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .office-hours {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .office-hours h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .map-embed {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"> Pakistan Horizons</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Destinations</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lahore.html" class="dropdown-link">Lahore</a></li>
+                        <li><a href="karachi.html" class="dropdown-link">Karachi</a></li>
+                        <li><a href="islamabad.html" class="dropdown-link">Islamabad</a></li>
+                        <li><a href="hunza.html" class="dropdown-link">Hunza Valley</a></li>
+                        <li><a href="swat.html" class="dropdown-link">Swat</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="policies.html" class="nav-link">Policies</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+            <p>Ready to start your next adventure? We're here to help you plan the perfect journey. Contact us today!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g., Trip to Europe">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your dream destination, travel dates, group size, and any special requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                    
+         <h3>Email Address</h3>
+                        <p>info@pakistanhorizons.com<br>
+                        bookings@pakistanhorizons.com</p>
+                    </div>
+
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone Numbers</h3>
+                        <p>Main Office: +92 300 7654321</p>
+                        Emergency Line: +92 300 1234567</p>
+                        Toll-Free: 1-800-PAKHORIZON-1234</p>
+
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Physical Address</h3>
+                        <p>Pakistan Horizons Travel Agency<br>
+                    📍 123 Main Street, Islamabad, Pakistan<br>
+                </p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 7:00 PM<br>
+                        Saturday: 10:00 AM - 5:00 PM<br>
+                        Sunday: 12:00 PM - 4:00 PM<br>
+                        <em>Emergency support available 24/7</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2>Find Us</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Visit our office in the heart of Travel City. We're conveniently located near major transportation hubs.</p>
+            
+            <!-- Google Maps Embed -->
+            <iframe 
+                class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.00597!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNSJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="office-hours">
+                <h3>Office Hours & Availability</h3>
+                <div class="hours-grid">
+                    <div>
+                        <div class="hours-item">
+                            <span><strong>Monday</strong></span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Tuesday</strong></span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Wednesday</strong></span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Thursday</strong></span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="hours-item">
+                            <span><strong>Friday</strong></span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Saturday</strong></span>
+                            <span>10:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Sunday</strong></span>
+                            <span>12:00 PM - 4:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span><strong>Emergency</strong></span>
+                            <span>24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pakistan Horizons</h3>
+                    <p>Your gateway to extraordinary adventures around the world. We specialize in creating personalized travel experiences that inspire and delight.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                    <p><a href="policies.html">Policies</a></p>
+                </div>
+              <div class="footer-section">
+                    <h3>Contact Info</h3>
+                <p>📧pakistanhorizons@gmail.com</p>
+                    <p>📞 +92 300 1234567</p>
+                    <p>📍 123 Main Street, Islamabad, Pakistan</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+ <p>&copy; 2025 Pakistan Horizons. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Form -->
+    <script src="js/script.js"></script>
+    <script>
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message, ' + name + '! We will get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+

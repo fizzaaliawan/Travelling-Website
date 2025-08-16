@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamabad - Pakistan Horizons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Islamabad Page Specific Styles */
+        .islamabad-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/islamabad-pakistan-monument.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .islamabad-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .islamabad-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .destination-content {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .destination-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .destination-intro h2 {
+            font-size: 2.5rem;
+            color: var(--primary-medium);
+            margin-bottom: 1rem;
+        }
+
+        .destination-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .attraction-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .attraction-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 2rem;
+        }
+
+        .attraction-info h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .attraction-info p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .travel-tips {
+            background-color: var(--accent-cream);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .travel-tips h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tip-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-item h4 {
+            color: var(--primary-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .islamabad-hero h1 {
+                font-size: 3rem;
+            }
+
+            .destination-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .attractions-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Pakistan Horizons</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Destinations</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lahore.html" class="dropdown-link">Lahore</a></li>
+                        <li><a href="karachi.html" class="dropdown-link">Karachi</a></li>
+                        <li><a href="islamabad.html" class="dropdown-link">Islamabad</a></li>
+                        <li><a href="hunza.html" class="dropdown-link">Hunza Valley</a></li>
+                        <li><a href="swat.html" class="dropdown-link">Swat</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="policies.html" class="nav-link">Policies</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Islamabad Hero Section -->
+    <section class="islamabad-hero">
+        <div class="hero-content">
+            <h1>Islamabad</h1>
+            <p>The Beautiful Capital - A Modern City Nestled in Natural Splendor</p>
+        </div>
+    </section>
+
+    <!-- Destination Content -->
+    <section class="destination-content">
+        <!-- Introduction -->
+        <div class="destination-intro">
+            <h2>Discover Pakistan's Capital City</h2>
+            <p>Islamabad, the capital city of Pakistan, is a masterpiece of urban planning that seamlessly blends modern architecture with natural beauty. Built in the 1960s, this planned city is known for its wide tree-lined streets, modern buildings, and stunning backdrop of the Margalla Hills. As the political and administrative center of Pakistan, Islamabad offers visitors a unique combination of governmental grandeur, cultural attractions, and outdoor adventures.</p>
+        </div>
+
+        <!-- Main Attractions -->
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="images/pakistan_monument.jpg" alt="Pakistan Monument" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Pakistan Monument</h3>
+                    <p>A national symbol representing the unity of the Pakistani people, this flower-shaped monument offers panoramic views of Islamabad. The adjacent museum showcases Pakistan's history and culture. The monument is beautifully illuminated at night, making it a popular spot for evening visits.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/faisal_mosque.jpg" alt="Faisal Mosque" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Faisal Mosque</h3>
+                    <p>One of the largest mosques in the world, designed by Turkish architect Vedat Dalokay. Its unique contemporary design without traditional domes makes it an architectural marvel. Set against the backdrop of the Margalla Hills, it's a stunning example of modern Islamic architecture.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/margalla_hills_national_park.jpg" alt="Margalla Hills" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Margalla Hills National Park</h3>
+                    <p>A natural paradise offering hiking trails, wildlife viewing, and breathtaking views of the twin cities. The park is home to various species of flora and fauna. Popular trails include Trail 3 and Trail 5, perfect for nature lovers and adventure enthusiasts seeking outdoor activities.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/lok_virsa_museum.jpg" alt="Lok Virsa Museum" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Lok Virsa Museum</h3>
+                    <p>Pakistan's premier folk heritage museum showcasing the country's rich cultural diversity. The museum features traditional crafts, musical instruments, costumes, and artifacts from all provinces. It's an excellent place to understand Pakistan's cultural heritage and artistic traditions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Travel Tips -->
+        <div class="travel-tips">
+            <h3>Essential Travel Tips for Islamabad</h3>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <div class="tip-icon">🏛️</div>
+                    <h4>Best Time to Visit</h4>
+                    <p>March to May and September to November offer ideal weather. Spring brings beautiful blooming flowers throughout the city.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🍽️</div>
+                    <h4>Must-Try Food</h4>
+                    <p>Experience diverse Pakistani cuisine at Saidpur Village, Blue Area restaurants, and the famous Sunday Bazaar food stalls.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🚌</div>
+                    <h4>Getting Around</h4>
+                    <p>The city has good public transport including Metro Bus. Taxis and ride-sharing apps are readily available. The city is very walkable in many areas.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🛍️</div>
+                    <h4>Shopping</h4>
+                    <p>Visit Centaurus Mall for modern shopping, Sunday Bazaar for local goods, and Jinnah Super Market for everyday items and souvenirs.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🥾</div>
+                    <h4>Outdoor Activities</h4>
+                    <p>Hiking in Margalla Hills is popular. Start early morning for cooler weather and better views. Carry water and wear comfortable shoes.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🏢</div>
+                    <h4>Government Area</h4>
+                    <p>The Red Zone houses important government buildings. Some areas require special permits, so plan accordingly if you want to visit official buildings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="contact.html" class="btn" style="background-color: var(--primary-medium); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease;">Plan Your Islamabad Visit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Internship Pakistan Travel</h3>
+                    <p>Your gateway to extraordinary adventures around Pakistan. We specialize in creating personalized travel experiences that showcase the beauty and culture of our homeland.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                    <p><a href="policies.html">Policies</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                     <p>📧pakistanhorizons@gmail.com</p>
+                    <p>📞 +92 300 1234567</p>
+                    <p>📍 123 Main Street, Islamabad, Pakistan</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pakistan Horizons. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

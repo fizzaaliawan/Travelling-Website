@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunza Valley - Pakistan Horizons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Hunza Page Specific Styles */
+        .hunza-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/hunza-valley.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .hunza-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hunza-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .destination-content {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .destination-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .destination-intro h2 {
+            font-size: 2.5rem;
+            color: var(--primary-medium);
+            margin-bottom: 1rem;
+        }
+
+        .destination-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .attraction-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .attraction-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 2rem;
+        }
+
+        .attraction-info h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .attraction-info p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .travel-tips {
+            background-color: var(--accent-cream);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .travel-tips h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tip-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-item h4 {
+            color: var(--primary-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hunza-hero h1 {
+                font-size: 3rem;
+            }
+
+            .destination-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .attractions-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"> Pakistan Horizons</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Destinations</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lahore.html" class="dropdown-link">Lahore</a></li>
+                        <li><a href="karachi.html" class="dropdown-link">Karachi</a></li>
+                        <li><a href="islamabad.html" class="dropdown-link">Islamabad</a></li>
+                        <li><a href="hunza.html" class="dropdown-link">Hunza Valley</a></li>
+                        <li><a href="swat.html" class="dropdown-link">Swat</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="policies.html" class="nav-link">Policies</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hunza Hero Section -->
+    <section class="hunza-hero">
+        <div class="hero-content">
+            <h1>Hunza Valley</h1>
+            <p>Heaven on Earth - Where Mountains Touch the Sky</p>
+        </div>
+    </section>
+
+    <!-- Destination Content -->
+    <section class="destination-content">
+        <!-- Introduction -->
+        <div class="destination-intro">
+            <h2>Experience the Crown Jewel of Northern Pakistan</h2>
+            <p>Hunza Valley, often called the "Shangri-La" of Pakistan, is a breathtaking mountainous region in Gilgit-Baltistan that captivates visitors with its stunning natural beauty, rich culture, and legendary hospitality. Surrounded by some of the world's highest peaks including Rakaposhi, Ultar Sar, and parts of the Karakoram range, this valley offers an unforgettable experience of pristine landscapes, ancient forts, and a unique way of life that has remained largely unchanged for centuries.</p>
+        </div>
+
+        <!-- Main Attractions -->
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="images/karimabad.jpg" alt="Hunza Valley Landscape" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Karimabad</h3>
+                    <p>The main town of Hunza Valley, offering spectacular views of Rakaposhi peak. This charming town is the perfect base for exploring the valley, with traditional architecture, friendly locals, and stunning mountain vistas. The town comes alive during spring when apricot and cherry blossoms bloom.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/baltit_fort.jpg" alt="Baltit Fort" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Baltit Fort</h3>
+                    <p>A 700-year-old ancient fort that served as the residence of the Mirs (rulers) of Hunza. This UNESCO World Heritage site has been beautifully restored and now serves as a museum showcasing the region's history and culture. The fort offers panoramic views of the entire valley.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/attabad_lake.jpg" alt="Attabad Lake" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Attabad Lake</h3>
+                    <p>A stunning turquoise lake formed in 2010 after a massive landslide. This natural wonder stretches for miles and offers boat rides with breathtaking views of surrounding mountains. The lake's brilliant blue color against the stark mountain landscape creates a mesmerizing contrast.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="images/passu_cones.jpg" alt="Passu Cones" class="attraction-image">
+                <div class="attraction-info">
+                    <h3>Passu Cones</h3>
+                    <p>Distinctive pyramid-shaped peaks that are among the most photographed mountains in Pakistan. These dramatic spires rise sharply from the valley floor, creating a surreal landscape. The nearby Passu Glacier and suspension bridge add to the area's natural attractions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Travel Tips -->
+        <div class="travel-tips">
+            <h3>Essential Travel Tips for Hunza Valley</h3>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <div class="tip-icon">🏔️</div>
+                    <h4>Best Time to Visit</h4>
+                    <p>April to October offers the best weather. Spring (April-May) brings blossoms, while autumn (September-October) offers clear mountain views.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🍯</div>
+                    <h4>Local Specialties</h4>
+                    <p>Try fresh apricots, walnuts, and local honey. Don't miss traditional dishes like chapshoro, mamtu, and the famous Hunza bread.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🚗</div>
+                    <h4>Getting There</h4>
+                    <p>Fly to Gilgit and drive via Karakoram Highway, or drive from Islamabad (10-12 hours). The journey itself is spectacular with mountain views.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🏠</div>
+                    <h4>Accommodation</h4>
+                    <p>Stay in traditional guesthouses for authentic experience, or choose from various hotels in Karimabad. Book in advance during peak season.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🧥</div>
+                    <h4>What to Pack</h4>
+                    <p>Bring warm clothes even in summer as temperatures drop at night. Comfortable hiking shoes, sunscreen, and sunglasses are essential.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">📱</div>
+                    <h4>Connectivity</h4>
+                    <p>Mobile and internet connectivity can be limited. Inform family about potential communication gaps and enjoy the digital detox experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="contact.html" class="btn" style="background-color: var(--primary-medium); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease;">Plan Your Hunza Adventure</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+            <h3>Pakistan Horizons</h3>
+
+          <p>Your gateway to extraordinary adventures around Pakistan. We specialize in creating personalized travel experiences that showcase the beauty and culture of our homeland.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                    <p><a href="policies.html">Policies</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📧pakistanhorizons@gmail.com</p>
+                    <p>📞 +92 300 1234567</p>
+                    <p>📍 123 Main Street, Islamabad, Pakistan</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 📧 Pakistan Horizons. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
